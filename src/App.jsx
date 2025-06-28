@@ -1,15 +1,18 @@
 import { Fragment } from 'react'
 import './App.css'
 import Header from './component/Header/Header'
+import Hero from './pages/Hero'
+import Footer from './component/Footer';
+
 
 function App() {
-  return ( <div className="overflow-x-hidden">
-    <Header/>
-    <Hero/>
-  </div>
+  return (
+    <div className="overflow-x-hidden">
+      <Header />
+      <Hero />
+      <Footer/>
+    </div>
   );
-};
-import { Container } from 'postcss';
-import Hero from './pages/Hero';
+}
 
-export default App
+export default App;

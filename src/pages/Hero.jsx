@@ -146,28 +146,29 @@ const Hero = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 border-solid p-4">
           {[1, 2, 3, 4, 5].map((_, i) => (
             <div
               key={i}
-              className="w-[212px] h-[281px] p-4 rounded-xl bg-white hover:shadow transition flex flex-col"
+              className="w-[212px] h-[281px] p-4 rounded-[16px] border border-[#E2E8F0] shadow-[0px_0px_8px_0px_#3B82F61F] bg-white flex flex-col items-center justify-center gap-4 transition"
             >
               <img
                 src={category2}
                 alt="Instructor"
                 className="w-full h-[160px] object-cover rounded-xl mb-4"
               />
-              <h3 className="text-sm font-medium text-gray-800">Ronald Richards</h3>
-              <p className="text-xs text-gray-500">UI/UX Designer</p>
+              <h3 className="text-sm text-gray-800 font-bold text-center">Ronald Richards</h3>
+              <p className="text-xs text-gray-500 text-center">UI/UX Designer</p>
               <div className="flex items-center gap-1 text-yellow-500 text-sm mt-1">
                 <span>★</span>
-                <span className="text-gray-800">4.9</span>
+                <span className="text-gray-800 font-semibold">4.9</span>
               </div>
-              <p className="text-xs text-gray-500">2400 Students</p>
+              <p className="text-xs text-gray-500 text-center">2400 Students</p>
             </div>
           ))}
         </div>
       </div>
+
 
       {/* Testimonials Section */}
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-16">
@@ -187,7 +188,7 @@ const Hero = () => {
               key={index}
               className="min-w-[280px] sm:min-w-0 flex-1 bg-white rounded-xl p-6 shadow-sm"
             >
-              <div className="text-blue-600  w-[35px] h-[27px] text-4xl mb-2">“</div>
+              <div className="text-blue-600 w-[35px] h-[27px] text-4xl mb-2 font-bold">“</div>
               <p className="text-sm text-gray-700 mb-4 leading-relaxed">
                 “Byway’s tech courses are top-notch! As someone who's always looking to
                 stay ahead in the rapidly evolving tech world, I appreciate the
@@ -208,24 +209,70 @@ const Hero = () => {
           ))}
         </div>
       </div>
+
+      {/* Section1: Become an Instructor */}
+      <div className="max-w-[1123px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 gap-[60px] mt-16">
+        {/* Image Content */}
+        <div className="flex-1 flex justify-center items-center mt-10 md:mt-0">
+          <img
+            src={image10}
+            alt="Transform"
+            className="w-[400px] h-[425px] object-cover" />
+        </div>
+
+        {/* Text Content */}
+        <div className="flex-1 text-center md:text-left">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+            Become an Instructor
+          </h2>
+          <p className="text-gray-600 mb-6 max-w-md mx-auto md:mx-0 text-base sm:text-lg">
+            Instructors from around the world teach millions of students on Byway. We provide the tools and skills to teach what you love.
+          </p>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded text-sm sm:text-base">
+            Checkout Courses
+          </button>
+        </div>
+      </div>
+
+      {/* Section2: Transform your life through education */}
+      <div className="max-w-[1123px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 gap-[60px] mt-16 py-12 bg-gray-50 rounded-lg">
+        {/* Text Content */}
+        <div className="flex-1 text-center md:text-left px-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+            Transform Your Life Through Education
+          </h2>
+          <p className="text-gray-600 mb-6 max-w-md mx-auto md:mx-0 text-base sm:text-lg">
+            Learners around the world are launching new careers, advancing in their fields, and enriching their lives.
+          </p>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded text-sm sm:text-base">
+            Checkout Courses
+          </button>
+        </div>
+
+        {/* Image Content */}
+        <div className="flex-1 flex justify-center items-center mt-10 md:mt-0">
+          <img src={GP143} alt="Transform" className="max-w-xs sm:max-w-md" />
+        </div>
+      </div>
+
     </div>
-  );
-};
+  )
+}
 
 // Category Card Component
 const Category = ({ icon, name, courses }) => (
-  <div className="flex flex-col items-center justify-center p-5 bg-blue-50 rounded-xl hover:shadow-md transition text-center">
-    <div className="bg-blue-100 p-4 rounded-full mb-4">{icon}</div>
-    <p className="text-base font-medium text-gray-800">{name}</p>
+  <div className="flex flex-col items-center justify-center p-5 bg-white rounded-xl hover:shadow-md transition text-center">
+    <div className="bg-blue-200 text-blue-500 p-4 rounded-full mb-4">{icon}</div>
+    <p className="text-base font-bold text-gray-800">{name}</p>
     <p className="text-sm text-gray-500">{courses}</p>
   </div>
-);
+)
 
 // Arrow Button Component
 const ArrowBtn = ({ direction }) => {
-  const isLeft = direction === 'left';
+  const isLeft = direction === 'left'
   return (
-    <button className="p-2 bg-gray-100 rounded hover:bg-gray-200">
+    <button className="p-2 bg-gray-500 rounded hover:bg-gray-200">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-4 w-4"
@@ -241,7 +288,7 @@ const ArrowBtn = ({ direction }) => {
         />
       </svg>
     </button>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
