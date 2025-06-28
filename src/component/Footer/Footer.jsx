@@ -1,22 +1,15 @@
 import React from 'react'
-import {
-    FaFacebookF,
-    FaPinterestP,
-    FaGoogle,
-    FaTwitter,
-    FaGithub,
-    FaWindows,
-} from 'react-icons/fa';
+import logoimage from './../../././../public/images/logo image.png'
+import ftIcon from './../../../public/images/ft icon.png'
 
 const Footer = () => {
     return (
-        <footer className="bg-[#1E293B] text-white py-10">
-            <div className="max-w-screen-xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <footer className="bg-[#1E293B] w-full h-auto text-white py-10">
+            <div className="max-w-screen-xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 {/* Byway Branding */}
                 <div>
                     <div className="flex items-center gap-2 mb-4">
-                        <div className="w-6 h-6 bg-blue-500 rounded-full" />
-                        <span className="text-lg font-semibold">Byway</span>
+                        <img src={logoimage} alt="logo image" className="w-[111px] h-[40px]" />
                     </div>
                     <p className="text-sm text-gray-300 mb-2">
                         Empowering learners through accessible and engaging online education.
@@ -56,17 +49,12 @@ const Footer = () => {
                     <p className="text-sm text-gray-300 mt-1">Tel: +1 (123) 456-7890</p>
                     <p className="text-sm text-gray-300 mt-1">Mail: bywayedu@website.in</p>
                     <div className="flex gap-3 mt-4 text-xl text-white">
-                        <FaFacebookF className="hover:text-blue-400 cursor-pointer" />
-                        <FaPinterestP className="hover:text-red-400 cursor-pointer" />
-                        <FaGoogle className="hover:text-red-500 cursor-pointer" />
-                        <FaTwitter className="hover:text-blue-300 cursor-pointer" />
-                        <FaGithub className="hover:text-gray-400 cursor-pointer" />
-                        <FaWindows className="hover:text-blue-500 cursor-pointer" />
+                        <img src={ftIcon} alt="Icon" className="w-[296px] h-[40px]" />
                     </div>
                 </div>
             </div>
         </footer>
-    )
+    );
 }
 
 export default Footer

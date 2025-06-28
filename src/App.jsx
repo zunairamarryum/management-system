@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import './App.css'
 import Header from './component/Header/Header'
 import Hero from './pages/Hero'
-import Footer from './component/Footer';
+import Footer from './component/Footer/Footer'
 
 
 function App() {

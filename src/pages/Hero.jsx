@@ -1,20 +1,21 @@
-import React from 'react';
-import image1 from './../../public/images/image1.png';
-import image2 from './../../public/images/image2.png';
-import image3 from './../../public/images/image3.png';
-import Ellipse1 from './../../public/images/Ellipse1.png';
-import Ellipse2 from './../../public/images/Ellipse2.png';
-import Ellipse3 from './../../public/images/Ellipse3.png';
-import Ellipse4 from './../../public/images/Ellipse4.png';
-import Ellipse5 from './../../public/images/Ellipse5.png';
-import { IoTelescopeOutline } from "react-icons/io5";
-import { GoCodeSquare } from "react-icons/go";
-import { LuBriefcase, LuAtom } from "react-icons/lu";
-import category1 from './../../public/images/Rectangle 1080.png';
-import category2 from './../../public/images/Rectangle 1136.png';
-import johndoe from './../../public/images/john doe.png';
-import image10 from './../../public/images/image 10.png';
-import GP143 from './../../public/images/Group 143.png';
+import React from 'react'
+import image1 from './../../public/images/image1.png'
+import image2 from './../../public/images/image2.png'
+import image3 from './../../public/images/image3.png'
+import Ellipse1 from './../../public/images/Ellipse1.png'
+import Ellipse2 from './../../public/images/Ellipse2.png'
+import Ellipse3 from './../../public/images/Ellipse3.png'
+import Ellipse4 from './../../public/images/Ellipse4.png'
+import Ellipse5 from './../../public/images/Ellipse5.png'
+import { IoTelescopeOutline } from "react-icons/io5"
+import { GoCodeSquare } from "react-icons/go"
+import { LuBriefcase, LuAtom } from "react-icons/lu"
+import { HiArrowNarrowRight } from "react-icons/hi"
+import category1 from './../../public/images/Rectangle 1080.png'
+import category2 from './../../public/images/Rectangle 1136.png'
+import johndoe from './../../public/images/john doe.png'
+import image10 from './../../public/images/image 10.png'
+import GP143 from './../../public/images/Group 143.png'
 
 const Hero = () => {
   return (
@@ -171,7 +172,7 @@ const Hero = () => {
 
 
       {/* Testimonials Section */}
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-16">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-16 bg-gray-50 w-[1776px] h-[276px] gap-16">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-2">
           <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">
             What Our Customer Say <br className="hidden sm:block" /> About Us
@@ -182,14 +183,16 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 overflow-x-auto scrollbar-hide">
+        <div className="flex flex-col sm:flex-row gap-4">
           {[1, 2, 3].map((_, index) => (
             <div
               key={index}
               className="min-w-[280px] sm:min-w-0 flex-1 bg-white rounded-xl p-6 shadow-sm"
             >
-              <div className="text-blue-600 w-[35px] h-[27px] text-4xl mb-2 font-bold">“</div>
-              <p className="text-sm text-gray-700 mb-4 leading-relaxed">
+              <div className="text-blue-600" style={{ width: '35.6619987487793px', height: '27.354000091552734px', top: '9.65px', left: '6px', fontSize: '2.25rem', fontWeight: '800', marginBottom: '0.5rem' }}>
+                “
+              </div>
+              <p className="text-sm text-black w-[384px] h-[104px] mb-4 leading-relaxed">
                 “Byway’s tech courses are top-notch! As someone who's always looking to
                 stay ahead in the rapidly evolving tech world, I appreciate the
                 up-to-date content and engaging multimedia.”
@@ -228,14 +231,14 @@ const Hero = () => {
           <p className="text-gray-600 mb-6 max-w-md mx-auto md:mx-0 text-base sm:text-lg">
             Instructors from around the world teach millions of students on Byway. We provide the tools and skills to teach what you love.
           </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded text-sm sm:text-base">
-            Checkout Courses
+          <button className="bg-gray-950 text-white font-medium px-6 py-3 rounded text-sm sm:text-base">
+            Start Your Instructor Journey
           </button>
         </div>
       </div>
 
       {/* Section2: Transform your life through education */}
-      <div className="max-w-[1123px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 gap-[60px] mt-16 py-12 bg-gray-50 rounded-lg">
+      <div className="max-w-[1123px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 gap-[60px] mt-16 py-12 rounded-lg">
         {/* Text Content */}
         <div className="flex-1 text-center md:text-left px-6">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
@@ -244,7 +247,7 @@ const Hero = () => {
           <p className="text-gray-600 mb-6 max-w-md mx-auto md:mx-0 text-base sm:text-lg">
             Learners around the world are launching new careers, advancing in their fields, and enriching their lives.
           </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded text-sm sm:text-base">
+          <button className="bg-gray-950 text-white font-medium px-6 py-3 rounded text-sm sm:text-base">
             Checkout Courses
           </button>
         </div>
