@@ -2,7 +2,7 @@ import React from 'react'
 import logo from "./../../././../public/images/logo.png"
 import { IoCartOutline } from "react-icons/io5"
 import { LuSearch } from "react-icons/lu"
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -10,10 +10,12 @@ const Header = () => {
       <div className="flex flex-wrap items-center justify-evenly w-full h-auto mr-10 py-3 gap-4">
 
         {/* Logo Section */}
+        <Link to='/byway'>
         <div className="flex items-center gap-2">
           <img src={logo} alt="logo" className="w-[31px] h-[40px]" />
           <span className="text-gray-700 font-semibold text-lg">Byway</span>
         </div>
+        </Link>
 
         {/* Categories Link */}
         <div className="text-gray-700 font-medium cursor-pointer">
@@ -42,13 +44,13 @@ const Header = () => {
           <IoCartOutline className="text-2xl text-gray-700 cursor-pointer" />
 
           {/* Auth Buttons */}
-          <Link>
+          <Link to="/login">
             <button className="text-gray-700 border border-gray-400 px-4 py-1.5 font-medium">
               Login
             </button>
           </Link>
 
-          <Link>
+          <Link to="/signup">
             <button className="bg-blue-500 text-white px-4 py-1.5 font-medium">
               Sign Up
             </button>

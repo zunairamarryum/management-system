@@ -18,6 +18,7 @@ import category2 from './../../public/images/Rectangle 1136.png'
 import johndoe from './../../public/images/john doe.png'
 import image10 from './../../public/images/image 10.png'
 import GP143 from './../../public/images/Group 143.png'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (

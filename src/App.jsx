@@ -13,7 +13,7 @@ function App() {
         <Header>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Hero</Link>
             </li>
             <li>
               <Link to="/login">Login</Link>
@@ -25,7 +25,7 @@ function App() {
         </Header>
 
         <Routes>
-          <Route path="/" element={<Hero />} />
+          <Route path="/byway" element={<Hero />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
