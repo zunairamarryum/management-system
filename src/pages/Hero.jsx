@@ -1,6 +1,8 @@
 import React from 'react'
 import image1 from './../../public/images/image1.png'
+import graduate from './../../public/images/graduate.png'
 import image2 from './../../public/images/image2.png'
+import guy from './../../public/images/guy.png'
 import image3 from './../../public/images/image3.png'
 import Ellipse1 from './../../public/images/Ellipse1.png'
 import Ellipse2 from './../../public/images/Ellipse2.png'
@@ -172,7 +174,7 @@ const Hero = () => {
 
 
       {/* Testimonials Section */}
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-16 bg-gray-50 w-[1776px] h-[276px] gap-16">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-16 bg-gray-50 w-[1440px] h-[512px] gap-16">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-2">
           <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">
             What Our Customer Say <br className="hidden sm:block" /> About Us

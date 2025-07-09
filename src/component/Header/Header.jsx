@@ -1,7 +1,8 @@
 import React from 'react'
 import logo from "./../../././../public/images/logo.png"
-import { IoCartOutline } from "react-icons/io5";
-import { LuSearch } from "react-icons/lu";
+import { IoCartOutline } from "react-icons/io5"
+import { LuSearch } from "react-icons/lu"
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -41,12 +42,17 @@ const Header = () => {
           <IoCartOutline className="text-2xl text-gray-700 cursor-pointer" />
 
           {/* Auth Buttons */}
-          <button className="text-gray-700 border border-gray-400 px-4 py-1.5 font-medium">
-            Login
-          </button>
-          <button className="bg-blue-500 text-white px-4 py-1.5 font-medium">
-            Sign Up
-          </button>
+          <Link>
+            <button className="text-gray-700 border border-gray-400 px-4 py-1.5 font-medium">
+              Login
+            </button>
+          </Link>
+
+          <Link>
+            <button className="bg-blue-500 text-white px-4 py-1.5 font-medium">
+              Sign Up
+            </button>
+          </Link>
         </div>
       </div>
     </div>
