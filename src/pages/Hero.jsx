@@ -18,7 +18,6 @@ import category2 from './../../public/images/Rectangle 1136.png'
 import johndoe from './../../public/images/john doe.png'
 import image10 from './../../public/images/image 10.png'
 import GP143 from './../../public/images/Group 143.png'
-import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
@@ -78,16 +77,29 @@ const Hero = () => {
       </div>
 
       {/* Stats Section */}
-      <div className="bg-gray-50 border-t mt-16 py-10">
+      <div className="bg-gray-50 mt-16 py-10">
         <div className="max-w-screen-xl mx-auto grid grid-cols-2 sm:grid-cols-4 text-center gap-6 px-4 sm:px-6">
-          {[250, 1000, 15, 2400].map((value, index) => (
-            <div key={index}>
-              <p className="text-xl sm:text-2xl font-bold text-gray-900">{value}+</p>
+          <div className="flex flex-col items-center pr-4">
+            <div className="flex flex-col items-center pr-4 border-r-4 border-gray-300">
+              <p className="text-xl sm:text-2xl font-bold text-gray-900">{250}+</p>
               <p className="text-gray-600 text-sm">Courses by our best mentors</p>
             </div>
-          ))}
+          </div>
+          <div className="flex flex-col items-center pr-4 border-r-4 border-gray-300">
+            <p className="text-xl sm:text-2xl font-bold text-gray-900">{1000}+</p>
+            <p className="text-gray-600 text-sm">Courses by our best mentors</p>
+          </div>
+          <div className="flex flex-col items-center pr-4 border-r-4 border-gray-300">
+            <p className="text-xl sm:text-2xl font-bold text-gray-900">{15}+</p>
+            <p className="text-gray-600 text-sm">Courses by our best mentors</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <p className="text-xl sm:text-2xl font-bold text-gray-900">{2400}+</p>
+            <p className="text-gray-600 text-sm">Courses by our best mentors</p>
+          </div>
         </div>
       </div>
+
 
       {/* Top Categories Section */}
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-10">

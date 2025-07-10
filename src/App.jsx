@@ -25,14 +25,14 @@ function App() {
         </Header>
 
         <Routes>
-          <Route path="/byway" element={<Hero />} />
+          <Route path="/" element={<Hero />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
       </div>
-      <Footer />
+       <Footer/>
     </Router>
   )
 }
 
-export default App;
+export default App

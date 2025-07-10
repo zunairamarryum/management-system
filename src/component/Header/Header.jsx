@@ -10,7 +10,7 @@ const Header = () => {
       <div className="flex flex-wrap items-center justify-evenly w-full h-auto mr-10 py-3 gap-4">
 
         {/* Logo Section */}
-        <Link to='/byway'>
+        <Link to='/'>
         <div className="flex items-center gap-2">
           <img src={logo} alt="logo" className="w-[31px] h-[40px]" />
           <span className="text-gray-700 font-semibold text-lg">Byway</span>
