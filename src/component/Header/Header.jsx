@@ -11,16 +11,18 @@ const Header = () => {
 
         {/* Logo Section */}
         <Link to='/'>
-        <div className="flex items-center gap-2">
-          <img src={logo} alt="logo" className="w-[31px] h-[40px]" />
-          <span className="text-gray-700 font-semibold text-lg">Byway</span>
-        </div>
+          <div className="flex items-center gap-2">
+            <img src={logo} alt="logo" className="w-[31px] h-[40px]" />
+            <span className="text-gray-700 font-semibold text-lg">Byway</span>
+          </div>
         </Link>
 
         {/* Categories Link */}
-        <div className="text-gray-700 font-medium cursor-pointer">
-          Categories
-        </div>
+        <Link to="/category">
+          <div className="text-gray-700 font-medium cursor-pointer">
+            Categories
+          </div>
+        </Link>
 
         {/* Search Bar */}
         <div className="relative w-full max-w-[500px] flex-1">
@@ -58,8 +60,7 @@ const Header = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
-
+export default Header
