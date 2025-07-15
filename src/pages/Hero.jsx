@@ -1,23 +1,25 @@
-import React from 'react'
-import image1 from './../../public/images/image1.png'
-import graduate from './../../public/images/graduate.png'
-import image2 from './../../public/images/image2.png'
-import guy from './../../public/images/guy.png'
-import image3 from './../../public/images/image3.png'
-import Ellipse1 from './../../public/images/Ellipse1.png'
-import Ellipse2 from './../../public/images/Ellipse2.png'
-import Ellipse3 from './../../public/images/Ellipse3.png'
-import Ellipse4 from './../../public/images/Ellipse4.png'
-import Ellipse5 from './../../public/images/Ellipse5.png'
-import { IoTelescopeOutline } from "react-icons/io5"
-import { GoCodeSquare } from "react-icons/go"
-import { LuBriefcase, LuAtom } from "react-icons/lu"
-import { HiArrowNarrowRight } from "react-icons/hi"
-import category1 from './../../public/images/Rectangle 1080.png'
-import category2 from './../../public/images/Rectangle 1136.png'
-import johndoe from './../../public/images/john doe.png'
-import image10 from './../../public/images/image 10.png'
-import GP143 from './../../public/images/Group 143.png'
+import React from 'react';
+
+// Hero Images
+import image1 from './../../public/images/image1.png';
+import image2 from './../../public/images/image2.png';
+import image3 from './../../public/images/image3.png';
+import Ellipse1 from './../../public/images/Ellipse1.png';
+import Ellipse2 from './../../public/images/Ellipse2.png';
+import Ellipse3 from './../../public/images/Ellipse3.png';
+import Ellipse4 from './../../public/images/Ellipse4.png';
+import Ellipse5 from './../../public/images/Ellipse5.png';
+import category1 from './../../public/images/Rectangle 1080.png';
+import category2 from './../../public/images/Rectangle 1136.png';
+import johndoe from './../../public/images/john doe.png';
+import image10 from './../../public/images/image 10.png';
+import GP143 from './../../public/images/Group 143.png';
+
+// Icons
+import { IoTelescopeOutline } from "react-icons/io5";
+import { GoCodeSquare } from "react-icons/go";
+import { LuBriefcase, LuAtom } from "react-icons/lu";
+import { HiArrowNarrowRight } from "react-icons/hi";
 
 const Hero = () => {
   return (
@@ -99,7 +101,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
 
       {/* Top Categories Section */}
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-10">
@@ -184,7 +185,6 @@ const Hero = () => {
           ))}
         </div>
       </div>
-
 
       {/* Testimonials Section */}
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-16 bg-gray-50 w-[1440px] h-[512px] gap-16">
@@ -309,4 +309,4 @@ const ArrowBtn = ({ direction }) => {
   )
 }
 
-export default Hero
+export default Hero;

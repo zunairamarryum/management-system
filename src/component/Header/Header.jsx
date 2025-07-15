@@ -70,8 +70,8 @@ const Header = () => {
           )}
 
           {/* Heart and Bell Icons (Always visible on all pages) */}
-          <FiHeart />
-          <PiBell />
+          <FiHeart className="text-2xl text-gray-700 cursor-pointer"/>
+          <PiBell className="text-2xl text-gray-700 cursor-pointer"/>
         </div>
       </div>
     </div>
