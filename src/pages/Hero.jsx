@@ -246,8 +246,9 @@ const Hero = () => {
           <p className="text-gray-600 mb-6 max-w-md mx-auto md:mx-0 text-base sm:text-lg">
             Instructors from around the world teach millions of students on Byway. We provide the tools and skills to teach what you love.
           </p>
-          <button className="bg-gray-950 text-white font-medium px-6 py-3 rounded text-sm sm:text-base">
+          <button className="bg-gray-950 text-white font-medium px-6 py-3 rounded text-sm sm:text-base flex items-center justify-center gap-2">
             Start Your Instructor Journey
+            <HiArrowNarrowRight className="text-white flex" />
           </button>
         </div>
       </div>
@@ -262,8 +263,9 @@ const Hero = () => {
           <p className="text-gray-600 mb-6 max-w-md mx-auto md:mx-0 text-base sm:text-lg">
             Learners around the world are launching new careers, advancing in their fields, and enriching their lives.
           </p>
-          <button className="bg-gray-950 text-white font-medium px-6 py-3 rounded text-sm sm:text-base">
+          <button className="bg-gray-950 text-white font-medium px-6 py-3 rounded text-sm sm:text-base flex items-center justify-center gap-2">
             Checkout Courses
+            <HiArrowNarrowRight className="text-white flex" />
           </button>
         </div>
 
