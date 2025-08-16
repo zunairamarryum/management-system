@@ -2,7 +2,9 @@ import React from 'react';
 
 // Hero Images
 import image1 from './../../public/images/image1.png';
+import graduate from './../../public/images/graduate.png'
 import image2 from './../../public/images/image2.png';
+import guy from './../../public/images/guy.png'
 import image3 from './../../public/images/image3.png';
 import Ellipse1 from './../../public/images/Ellipse1.png';
 import Ellipse2 from './../../public/images/Ellipse2.png';
@@ -20,6 +22,40 @@ import { IoTelescopeOutline } from "react-icons/io5";
 import { GoCodeSquare } from "react-icons/go";
 import { LuBriefcase, LuAtom } from "react-icons/lu";
 import { HiArrowNarrowRight } from "react-icons/hi";
+
+/* ---------- Shared Components ---------- */
+
+const Category = ({ icon, name, courses }) => (
+  <div className="flex flex-col items-center justify-center p-5 bg-white rounded-xl hover:shadow-md transition text-center">
+    <div className="bg-blue-200 text-blue-500 p-4 rounded-full mb-4">{icon}</div>
+    <p className="text-base font-bold text-gray-800">{name}</p>
+    <p className="text-sm text-gray-500">{courses}</p>
+  </div>
+);
+
+const ArrowBtn = ({ direction }) => {
+  const isLeft = direction === 'left';
+  return (
+    <button className="p-2 bg-gray-500 rounded hover:bg-gray-200">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-4 w-4"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d={isLeft ? 'M15 19l-7-7 7-7' : 'M9 5l7 7-7 7'}
+        />
+      </svg>
+    </button>
+  );
+};
+
+/* ---------------- Hero ----------------- */
 
 const Hero = () => {
   return (
@@ -42,41 +78,110 @@ const Hero = () => {
         </div>
 
         {/* Image Content */}
-        <div className="flex-1 relative flex items-center justify-center mt-10 md:mt-0">
-          <div className="relative w-full max-w-[300px] sm:max-w-md flex justify-center items-center">
-            <img
-              src={image1}
-              alt="Graduate"
-              className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-red-500 border-4 border-gray-300 z-30 relative"
-            />
-            <img
-              src={image2}
-              alt="Guy"
-              className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-blue-500 border-4 border-gray-300 z-30 relative"
-            />
-            <img
-              src={image3}
-              alt="Girl"
-              className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-yellow-400 border-4 border-gray-300 z-30 relative"
-            />
+<div className="flex-1 relative flex items-center justify-center mt-10 md:mt-0">
+  <div className="relative w-[360px] sm:w-[440px] aspect-square">
 
-            {/* Students Popup */}
-            <div className="absolute -bottom-12 w-[165px] h-[104px] sm:-bottom-10 right-0 bg-white shadow-lg rounded-lg px-3 sm:px-4 py-2 flex items-center gap-2 z-40">
-              {[Ellipse1, Ellipse2, Ellipse3, Ellipse4, Ellipse5].map((src, i) => (
-                <img
-                  key={i}
-                  src={src}
-                  alt="Students"
-                  className="h-5 w-5 sm:h-6 sm:w-6 rounded-full"
-                />
-              ))}
-              <p className="text-xs sm:text-sm text-gray-700">
-                Join our community of 1200+ Students
-              </p>
-            </div>
-          </div>
-        </div>
+    {/* dotted accent near graduate */}
+    <div
+      className="absolute top-24 left-4 w-24 h-16 opacity-50"
+      style={{
+        backgroundImage: 'radial-gradient(#cfe3ff 1.5px, transparent 1.5px)',
+        backgroundSize: '10px 10px'
+      }}
+    />
+
+   {/* ========== Graduate (top-left) ========== */}
+<div className="absolute top-12 left-2">
+  <div className="relative">
+    {/* light-gray half ring at the bottom */}
+    <div
+      className="absolute bottom-[-8px] left-0 w-full h-16 rounded-t-full border-2 border-gray-200"
+      style={{
+        clipPath:
+          'polygon(0% 0%, 100% 0%, 100% 100%, 15% 100%, 15% 80%, 70% 80%, 70% 20%, 0% 20%)'
+      }}
+    />
+    {/* colored red circle */}
+    <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full bg-[#F55757] flex items-end justify-center shadow">
+      {/* Image centered inside the circle */}
+      <img
+        src={image1}
+        alt="Graduate"
+        className="w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover"
+      />
+    </div>
+  </div>
+</div>
+
+{/* ========== Guy (top-right) ========== */}
+<div className="absolute -top-3 right-1">
+  <div className="relative">
+{/* light-gray half ring */}
+        <div
+          className="absolute -inset-5 rounded-full border-2 border-gray-200"
+          style={{
+            clipPath:
+              'polygon(50% 0%, 100% 0%, 100% 100%, 45% 100%, 45% 80%, 90% 80%, 90% 20%, 50% 20%)'
+          }}
+        />
+    {/* colored blue circle */}
+    <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full bg-[#5AA7FF] flex items-end justify-center shadow">
+      {/* Image centered inside the circle */}
+      <img
+        src={image2}
+        alt="Guy"
+        className="w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover"
+      />
+    </div>
+  </div>
+</div>
+
+{/* ========== Girl (bottom-right) ========== */}
+<div className="absolute bottom-2 right-4">
+  <div className="relative">
+{/* light-gray half ring */}
+        <div
+          className="absolute -inset-5 rounded-full border-2 border-gray-200"
+          style={{
+            clipPath:
+              'polygon(50% 0%, 100% 0%, 100% 100%, 45% 100%, 45% 80%, 90% 80%, 90% 20%, 50% 20%)'
+          }}
+        />
+    {/* colored yellow circle */}
+    <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-[#F9C32E] flex items-end justify-center shadow">
+      {/* Image centered inside the circle */}
+      <img
+        src={image3}
+        alt="Girl"
+        className="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover"
+      />
+    </div>
+  </div>
+</div>
+
+
+    {/* ===== Students Popup (attached & centered text) ===== */}
+    <div className="absolute bottom-8 left-16 sm:left-20 bg-white shadow-lg rounded-xl px-4 py-3 z-40">
+      {/* avatars row with overlap */}
+      <div className="flex items-center justify-center -space-x-2 mb-2">
+        {[Ellipse1, Ellipse2, Ellipse3, Ellipse4, Ellipse5].map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt="Student"
+            className="h-7 w-7 sm:h-8 sm:w-8 rounded-full"
+          />
+        ))}
       </div>
+      {/* centered text below */}
+      <p className="text-xs sm:text-sm text-gray-700 text-center leading-tight font-bold">
+        Join our community of <br className="hidden sm:block" /> 1200+ Students
+      </p>
+    </div>
+  </div>
+</div>
+
+      </div> {/* ← close hero row */}
 
       {/* Stats Section */}
       <div className="bg-gray-50 mt-16 py-10">
@@ -204,7 +309,18 @@ const Hero = () => {
               key={index}
               className="min-w-[280px] sm:min-w-0 flex-1 bg-white rounded-xl p-6 shadow-sm"
             >
-              <div className="text-blue-600" style={{ width: '35.6619987487793px', height: '27.354000091552734px', top: '9.65px', left: '6px', fontSize: '2.25rem', fontWeight: '800', marginBottom: '0.5rem' }}>
+              <div
+                className="text-blue-600"
+                style={{
+                  width: '35.6619987487793px',
+                  height: '27.354000091552734px',
+                  top: '9.65px',
+                  left: '6px',
+                  fontSize: '2.25rem',
+                  fontWeight: '800',
+                  marginBottom: '0.5rem'
+                }}
+              >
                 “
               </div>
               <p className="text-sm text-black w-[384px] h-[104px] mb-4 leading-relaxed">
@@ -235,7 +351,8 @@ const Hero = () => {
           <img
             src={image10}
             alt="Transform"
-            className="w-[400px] h-[425px] object-cover" />
+            className="w-[400px] h-[425px] object-cover"
+          />
         </div>
 
         {/* Text Content */}
@@ -274,41 +391,8 @@ const Hero = () => {
           <img src={GP143} alt="Transform" className="max-w-xs sm:max-w-md" />
         </div>
       </div>
-
     </div>
-  )
-}
-
-// Category Card Component
-const Category = ({ icon, name, courses }) => (
-  <div className="flex flex-col items-center justify-center p-5 bg-white rounded-xl hover:shadow-md transition text-center">
-    <div className="bg-blue-200 text-blue-500 p-4 rounded-full mb-4">{icon}</div>
-    <p className="text-base font-bold text-gray-800">{name}</p>
-    <p className="text-sm text-gray-500">{courses}</p>
-  </div>
-)
-
-// Arrow Button Component
-const ArrowBtn = ({ direction }) => {
-  const isLeft = direction === 'left'
-  return (
-    <button className="p-2 bg-gray-500 rounded hover:bg-gray-200">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-4 w-4"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d={isLeft ? 'M15 19l-7-7 7-7' : 'M9 5l7 7-7 7'}
-        />
-      </svg>
-    </button>
-  )
-}
+  );
+};
 
 export default Hero;
