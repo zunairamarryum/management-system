@@ -61,39 +61,37 @@ const Hero = () => {
   return (
     <div className="w-full bg-white pt-10">
       {/* Hero Top Section */}
-      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 gap-10">
-        {/* Text Content */}
-        <div className="flex-1 text-center md:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-snug">
-            Unlock Your Potential <br /> with Byway
-          </h1>
-          <p className="text-gray-600 mb-6 max-w-md mx-auto md:mx-0 text-base sm:text-lg">
-            Welcome to Byway, where learning knows no bounds. We believe that
-            education is the key to personal and professional growth, and we’re
-            here to guide you on your journey to success.
-          </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded text-sm sm:text-base">
-            Start your instructor journey
-          </button>
-        </div>
+<div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 gap-10">
+  {/* Text Content */}
+  <div className="flex-1 text-center md:text-left">
+    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-snug">
+      Unlock Your Potential <br /> with Byway
+    </h1>
+    <p className="text-gray-600 mb-6 max-w-md mx-auto md:mx-0 text-base sm:text-lg">
+      Welcome to Byway, where learning knows no bounds. We believe that education is the key to personal and professional growth, and we’re here to guide you on your journey to success.
+    </p>
+    <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded text-sm sm:text-base">
+      Start your instructor journey
+    </button>
+  </div>
 
-        {/* Image Content */}
-<div className="flex-1 relative flex items-center justify-center mt-10 md:mt-0">
-  <div className="relative w-[360px] sm:w-[440px] aspect-square">
+  {/* Image Content */}
+  <div className="flex-1 relative flex items-center justify-center mt-10 md:mt-0">
+    <div className="relative w-[360px] sm:w-[440px] aspect-square">
 
-    {/* dotted accent near graduate */}
-    <div
-      className="absolute top-24 left-4 w-24 h-16 opacity-50"
-      style={{
-        backgroundImage: 'radial-gradient(#cfe3ff 1.5px, transparent 1.5px)',
-        backgroundSize: '10px 10px'
-      }}
-    />
+      {/* dotted accent near graduate */}
+      <div
+        className="absolute top-24 left-4 w-24 h-16 opacity-50"
+        style={{
+          backgroundImage: 'radial-gradient(#cfe3ff 1.5px, transparent 1.5px)',
+          backgroundSize: '10px 10px'
+        }}
+      />
 
-   {/* ========== Graduate (top-left) ========== */}
+      {/* ========== Graduate (top-left) ========== */}
 <div className="absolute top-12 left-2">
   <div className="relative">
-    {/* light-gray half ring at the bottom */}
+    {/* Light-gray half ring at the bottom */}
     <div
       className="absolute bottom-[-8px] left-0 w-full h-16 rounded-t-full border-2 border-gray-200"
       style={{
@@ -101,29 +99,37 @@ const Hero = () => {
           'polygon(0% 0%, 100% 0%, 100% 100%, 15% 100%, 15% 80%, 70% 80%, 70% 20%, 0% 20%)'
       }}
     />
-    {/* colored red circle */}
-    <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full bg-[#F55757] flex items-end justify-center shadow">
-      {/* Image centered inside the circle */}
+    {/* Colored red circle */}
+    <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full bg-[#F55757] flex items-center justify-center shadow">
+      {/* First image (image1) positioned as the background */}
       <img
-        src={image1}
+        src={image1} // Uploaded image used as image1
+        alt="Background"
+        className="absolute bottom-0 w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover"
+      />
+
+      {/* Second image (graduate) positioned exactly on top of image1, shifted right */}
+      <img
+        src={graduate} // Graduate image
         alt="Graduate"
-        className="w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover"
+        className="absolute top-[-35%] left-4 right-0 w-36 h-36 sm:w-40 sm:h-40 rounded-full object-cover rotate-[5deg]"
       />
     </div>
   </div>
 </div>
 
+
 {/* ========== Guy (top-right) ========== */}
-<div className="absolute -top-3 right-1">
+<div className="absolute -top-3 right-4">
   <div className="relative">
-{/* light-gray half ring */}
-        <div
-          className="absolute -inset-5 rounded-full border-2 border-gray-200"
-          style={{
-            clipPath:
-              'polygon(50% 0%, 100% 0%, 100% 100%, 45% 100%, 45% 80%, 90% 80%, 90% 20%, 50% 20%)'
-          }}
-        />
+    {/* light-gray half ring */}
+    <div
+      className="absolute -inset-5 rounded-full border-2 border-gray-200"
+      style={{
+        clipPath:
+          'polygon(50% 0%, 100% 0%, 100% 100%, 45% 100%, 45% 80%, 90% 80%, 90% 20%, 50% 20%)'
+      }}
+    />
     {/* colored blue circle */}
     <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full bg-[#5AA7FF] flex items-end justify-center shadow">
       {/* Image centered inside the circle */}
@@ -132,80 +138,88 @@ const Hero = () => {
         alt="Guy"
         className="w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover"
       />
-    </div>
-  </div>
-</div>
-
-{/* ========== Girl (bottom-right) ========== */}
-<div className="absolute bottom-2 right-4">
-  <div className="relative">
-{/* light-gray half ring */}
-        <div
-          className="absolute -inset-5 rounded-full border-2 border-gray-200"
-          style={{
-            clipPath:
-              'polygon(50% 0%, 100% 0%, 100% 100%, 45% 100%, 45% 80%, 90% 80%, 90% 20%, 50% 20%)'
-          }}
-        />
-    {/* colored yellow circle */}
-    <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-[#F9C32E] flex items-end justify-center shadow">
-      {/* Image centered inside the circle */}
+      {/* Second image (guy) positioned exactly on top of image2, shifted down and right, and rotated */}
       <img
-        src={image3}
-        alt="Girl"
-        className="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover"
+        src={guy} // Guy image
+        alt="Guy"
+        className="absolute top-[-15%] left-2 w-36 h-36 sm:w-40 sm:h-40 rounded-full object-cover rotate-[-9deg]"
       />
     </div>
   </div>
 </div>
 
 
-    {/* ===== Students Popup (attached & centered text) ===== */}
-    <div className="absolute bottom-8 left-16 sm:left-20 bg-white shadow-lg rounded-xl px-4 py-3 z-40">
-      {/* avatars row with overlap */}
-      <div className="flex items-center justify-center -space-x-2 mb-2">
-        {[Ellipse1, Ellipse2, Ellipse3, Ellipse4, Ellipse5].map((src, i) => (
-          <img
-            key={i}
-            src={src}
-            alt="Student"
-            className="h-7 w-7 sm:h-8 sm:w-8 rounded-full"
+
+      {/* ========== Girl (bottom-right) ========== */}
+      <div className="absolute bottom-2 right-4">
+        <div className="relative">
+          {/* light-gray half ring */}
+          <div
+            className="absolute -inset-5 rounded-full border-2 border-gray-200"
+            style={{
+              clipPath:
+                'polygon(50% 0%, 100% 0%, 100% 100%, 45% 100%, 45% 80%, 90% 80%, 90% 20%, 50% 20%)'
+            }}
           />
-        ))}
+          {/* colored yellow circle */}
+          <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-[#F9C32E] flex items-end justify-center shadow">
+            {/* Image centered inside the circle */}
+            <img
+              src={image3}
+              alt="Girl"
+              className="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover"
+            />
+          </div>
+        </div>
       </div>
-      {/* centered text below */}
-      <p className="text-xs sm:text-sm text-gray-700 text-center leading-tight font-bold">
-        Join our community of <br className="hidden sm:block" /> 1200+ Students
-      </p>
+
+      {/* ===== Students Popup (attached & centered text) ===== */}
+      <div className="absolute bottom-8 left-16 sm:left-20 bg-white shadow-lg rounded-xl px-4 py-3 z-40">
+        {/* avatars row with overlap */}
+        <div className="flex items-center justify-center -space-x-2 mb-2">
+          {[Ellipse1, Ellipse2, Ellipse3, Ellipse4, Ellipse5].map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt="Student"
+              className="h-7 w-7 sm:h-8 sm:w-8 rounded-full"
+            />
+          ))}
+        </div>
+        {/* centered text below */}
+        <p className="text-xs sm:text-sm text-gray-700 text-center leading-tight font-bold">
+          Join our community of <br className="hidden sm:block" /> 1200+ Students
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div> {/* ← close hero row */}
+
+{/* Stats Section */}
+<div className="bg-gray-50 mt-16 py-10">
+  <div className="max-w-screen-xl mx-auto grid grid-cols-2 sm:grid-cols-4 text-center gap-6 px-4 sm:px-6">
+    <div className="flex flex-col items-center pr-4">
+      <div className="flex flex-col items-center pr-4 border-r-4 border-gray-300">
+        <p className="text-xl sm:text-2xl font-bold text-gray-900">{250}+</p>
+        <p className="text-gray-600 text-sm">Courses by our best mentors</p>
+      </div>
+    </div>
+    <div className="flex flex-col items-center pr-4 border-r-4 border-gray-300">
+      <p className="text-xl sm:text-2xl font-bold text-gray-900">{1000}+</p>
+      <p className="text-gray-600 text-sm">Courses by our best mentors</p>
+    </div>
+    <div className="flex flex-col items-center pr-4 border-r-4 border-gray-300">
+      <p className="text-xl sm:text-2xl font-bold text-gray-900">{15}+</p>
+      <p className="text-gray-600 text-sm">Courses by our best mentors</p>
+    </div>
+    <div className="flex flex-col items-center">
+      <p className="text-xl sm:text-2xl font-bold text-gray-900">{2400}+</p>
+      <p className="text-gray-600 text-sm">Courses by our best mentors</p>
     </div>
   </div>
 </div>
 
-      </div> {/* ← close hero row */}
-
-      {/* Stats Section */}
-      <div className="bg-gray-50 mt-16 py-10">
-        <div className="max-w-screen-xl mx-auto grid grid-cols-2 sm:grid-cols-4 text-center gap-6 px-4 sm:px-6">
-          <div className="flex flex-col items-center pr-4">
-            <div className="flex flex-col items-center pr-4 border-r-4 border-gray-300">
-              <p className="text-xl sm:text-2xl font-bold text-gray-900">{250}+</p>
-              <p className="text-gray-600 text-sm">Courses by our best mentors</p>
-            </div>
-          </div>
-          <div className="flex flex-col items-center pr-4 border-r-4 border-gray-300">
-            <p className="text-xl sm:text-2xl font-bold text-gray-900">{1000}+</p>
-            <p className="text-gray-600 text-sm">Courses by our best mentors</p>
-          </div>
-          <div className="flex flex-col items-center pr-4 border-r-4 border-gray-300">
-            <p className="text-xl sm:text-2xl font-bold text-gray-900">{15}+</p>
-            <p className="text-gray-600 text-sm">Courses by our best mentors</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <p className="text-xl sm:text-2xl font-bold text-gray-900">{2400}+</p>
-            <p className="text-gray-600 text-sm">Courses by our best mentors</p>
-          </div>
-        </div>
-      </div>
 
       {/* Top Categories Section */}
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-10">
