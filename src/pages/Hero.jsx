@@ -1,11 +1,7 @@
 import React from 'react';
 
 // Hero Images
-import image1 from './../../public/images/image1.png';
-import graduate from './../../public/images/graduate.png'
-import image2 from './../../public/images/image2.png';
-import guy from './../../public/images/guy.png'
-import image3 from './../../public/images/image3.png';
+import personImg from './../../public/images/image 9.png';
 import Ellipse1 from './../../public/images/Ellipse1.png';
 import Ellipse2 from './../../public/images/Ellipse2.png';
 import Ellipse3 from './../../public/images/Ellipse3.png';
@@ -22,6 +18,8 @@ import { IoTelescopeOutline } from "react-icons/io5";
 import { GoCodeSquare } from "react-icons/go";
 import { LuBriefcase, LuAtom } from "react-icons/lu";
 import { HiArrowNarrowRight } from "react-icons/hi";
+import { PiCertificateBold } from "react-icons/pi";
+
 
 /* ---------- Shared Components ---------- */
 
@@ -56,173 +54,154 @@ const ArrowBtn = ({ direction }) => {
 };
 
 /* ---------------- Hero ----------------- */
-
 const Hero = () => {
+  // numbers for the gauge
+  const completion = 87.6;
+  const radius = 38;
+  const circumference = Math.PI * radius;
+  const progress = (completion / 100) * circumference;
+
+  // avatars (from your imported Ellipse1..5)
+  const [E1, E2, E3, E4, E5] = [Ellipse1, Ellipse2, Ellipse3, Ellipse4, Ellipse5];
+
   return (
     <div className="w-full bg-white pt-10">
-      {/* Hero Top Section */}
-<div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 gap-10">
-  {/* Text Content */}
-  <div className="flex-1 text-center md:text-left">
-    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-snug">
-      Unlock Your Potential <br /> with Byway
-    </h1>
-    <p className="text-gray-600 mb-6 max-w-md mx-auto md:mx-0 text-base sm:text-lg">
-      Welcome to Byway, where learning knows no bounds. We believe that education is the key to personal and professional growth, and we’re here to guide you on your journey to success.
-    </p>
-    <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded text-sm sm:text-base">
-      Start your instructor journey
-    </button>
-  </div>
+      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 gap-10">
+        {/* ===== Left text ===== */}
+        <div className="flex-1 text-center md:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-snug">
+            Unlock Your Potential <br /> with Byway
+          </h1>
+          <p className="text-gray-600 mb-6 max-w-md mx-auto md:mx-0 text-base sm:text-lg">
+            Welcome to Byway, where learning knows no bounds. We believe that education is the key to personal and professional growth, and we’re here to guide you on your journey to success.
+          </p>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded text-sm sm:text-base">
+            Start your instructor journey
+          </button>
+        </div>
 
-  {/* Image Content */}
-  <div className="flex-1 relative flex items-center justify-center mt-10 md:mt-0">
-    <div className="relative w-[360px] sm:w-[440px] aspect-square">
+        {/* ===== Right side (exact like image) ===== */}
+        <div className="flex-1 relative mt-10 md:mt-0 md:flex md:justify-end">
+          <div className="relative w-[640px] h-[520px]">
 
-      {/* dotted accent near graduate */}
-      <div
-        className="absolute top-24 left-4 w-24 h-16 opacity-50"
-        style={{
-          backgroundImage: 'radial-gradient(#cfe3ff 1.5px, transparent 1.5px)',
-          backgroundSize: '10px 10px'
-        }}
-      />
+            {/* Blue panel */}
+            <div
+              className="absolute bg-[#93C5FD] rounded-[24px] overflow-hidden"
+              style={{ width: 470, height: 430, top: 70, left: 90 }}
+            >
+              {/* dotted grid half outside (right) */}
+              <div
+                className="absolute rounded-lg pointer-events-none"
+                style={{
+                  width: 140,
+                  height: 180,
+                  right: -70,
+                  top: '58%',
+                  transform: 'translateY(-50%)',
+                  backgroundImage: 'radial-gradient(#cfe3ff 2px, transparent 2px)',
+                  backgroundSize: '12px 12px',
+                  opacity: 1,
+                }}
+              />
+            </div>
 
-      {/* ========== Graduate (top-left) ========== */}
-<div className="absolute top-12 left-2">
-  <div className="relative">
-    {/* Light-gray half ring at the bottom */}
-    <div
-      className="absolute bottom-[-8px] left-0 w-full h-16 rounded-t-full border-2 border-gray-200"
-      style={{
-        clipPath:
-          'polygon(0% 0%, 100% 0%, 100% 100%, 15% 100%, 15% 80%, 70% 80%, 70% 20%, 0% 20%)'
-      }}
-    />
-    {/* Colored red circle */}
-    <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full bg-[#F55757] flex items-center justify-center shadow">
-      {/* First image (image1) positioned as the background */}
-      <img
-        src={image1} // Uploaded image used as image1
-        alt="Background"
-        className="absolute bottom-0 w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover"
-      />
-
-      {/* Second image (graduate) positioned exactly on top of image1, shifted right */}
-      <img
-        src={graduate} // Graduate image
-        alt="Graduate"
-        className="absolute top-[-35%] left-4 right-0 w-36 h-36 sm:w-40 sm:h-40 rounded-full object-cover rotate-[5deg]"
-      />
-    </div>
-  </div>
-</div>
-
-
-{/* ========== Guy (top-right) ========== */}
-<div className="absolute -top-3 right-4">
-  <div className="relative">
-    {/* light-gray half ring */}
-    <div
-      className="absolute -inset-5 rounded-full border-2 border-gray-200"
-      style={{
-        clipPath:
-          'polygon(50% 0%, 100% 0%, 100% 100%, 45% 100%, 45% 80%, 90% 80%, 90% 20%, 50% 20%)'
-      }}
-    />
-    {/* colored blue circle */}
-    <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full bg-[#5AA7FF] flex items-end justify-center shadow">
-      {/* Image centered inside the circle */}
-      <img
-        src={image2}
-        alt="Guy"
-        className="w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover"
-      />
-      {/* Second image (guy) positioned exactly on top of image2, shifted down and right, and rotated */}
-      <img
-        src={guy} // Guy image
-        alt="Guy"
-        className="absolute top-[-15%] left-2 w-36 h-36 sm:w-40 sm:h-40 rounded-full object-cover rotate-[-9deg]"
-      />
-    </div>
-  </div>
-</div>
-
-
-
-      {/* ========== Girl (bottom-right) ========== */}
-      <div className="absolute bottom-2 right-4">
-        <div className="relative">
-          {/* light-gray half ring */}
-          <div
-            className="absolute -inset-5 rounded-full border-2 border-gray-200"
-            style={{
-              clipPath:
-                'polygon(50% 0%, 100% 0%, 100% 100%, 45% 100%, 45% 80%, 90% 80%, 90% 20%, 50% 20%)'
-            }}
-          />
-          {/* colored yellow circle */}
-          <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-[#F9C32E] flex items-end justify-center shadow">
-            {/* Image centered inside the circle */}
+            {/* Person */}
             <img
-              src={image3}
-              alt="Girl"
-              className="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover"
+              src={personImg ?? "/person.png"}
+              alt="Instructor"
+              className="absolute object-cover"
+              style={{ width: 360, height: 470, left: 150, top: 30, borderRadius: 18 }}
             />
+
+            {/* == Card base class */}
+            {/* border #E5E7EB, radius 12, subtle shadow like figma */}
+            {/* Add this utility once in your file if you prefer: */}
+            {/* className="rounded-xl bg-white border border-gray-200 shadow-[0_6px_24px_rgba(16,24,40,0.06)]" */}
+
+            {/* Community card (top-left) */}
+            <div
+              className="absolute rounded-xl bg-white border border-gray-200 shadow-[0_6px_24px_rgba(16,24,40,0.06)]"
+              style={{ width: 200, height: 121, top: 30, left: 40, padding: 16 }}
+            >
+              <div className="flex items-center -space-x-2 mb-2">
+                {[Ellipse1, Ellipse2, Ellipse3, Ellipse4, Ellipse5].map((src, i) => (
+                  <img key={i} src={src} alt="" className="h-8 w-8 rounded-full" />
+                ))}
+              </div>
+              <p className="text-sm text-gray-700 leading-tight">
+                <span className="font-semibold">Join our community</span> of <br /> 1200+ Students
+              </p>
+            </div>
+
+            {/* Gauge card (top-right) */}
+            <div
+              className="absolute rounded-xl bg-white border border-gray-200 shadow-[0_6px_24px_rgba(16,24,40,0.06)] text-center"
+              style={{ width: 200, height: 160, top: 0, right: 10, padding: '12px 16px' }}
+            >
+              <div className="mx-auto w-[140px] h-[80px] relative">
+                <svg width="150" height="100" viewBox="0 0 140 80" className="overflow-visible">
+                  {/* track */}
+                  <path d="M 20 70 A 50 50 0 0 1 120 70" fill="none" stroke="#E5E7EB" strokeWidth="12" strokeLinecap="round" />
+                  {/* progress (87.6%) */}
+                  <path
+                    d="M 20 70 A 50 50 0 0 1 120 70"
+                    fill="none"
+                    stroke="#2563EB"
+                    strokeWidth="12"
+                    strokeLinecap="round"
+                    strokeDasharray={`${Math.PI * 50 * 0.876} ${Math.PI * 50}`}
+                  />
+                </svg>
+                <div className="absolute left-1/2 -translate-x-1/2 bottom-4 w-3 h-3 rounded-full bg-[#2563EB]" />
+              </div>
+              <p className="text-2xl font-bold leading-none mt-1">87.6%</p>
+              <p className="text-xs text-gray-500 mt-1">Completion rate of our courses</p>
+            </div>
+
+            {/* Courses sold card (bottom-left) — EXACT props */}
+            <div
+              className="absolute rounded-xl bg-white border border-gray-200 shadow-[0_6px_24px_rgba(16,24,40,0.06)] flex items-center gap-3"
+              style={{ width: 236, height: 121, left: 40, bottom: 20, padding: 16 }}
+            >
+              <div className="w-9 h-9 rounded-full bg-blue-600 grid place-items-center">
+                <PiCertificateBold className="w-5 h-5 text-white" />
+              </div>
+              <div className="flex flex-col leading-tight">
+                <p className="text-xs text-gray-500">Number of courses sold</p>
+                <p className="text-base font-bold text-black">100,000+</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* ===== Students Popup (attached & centered text) ===== */}
-      <div className="absolute bottom-8 left-16 sm:left-20 bg-white shadow-lg rounded-xl px-4 py-3 z-40">
-        {/* avatars row with overlap */}
-        <div className="flex items-center justify-center -space-x-2 mb-2">
-          {[Ellipse1, Ellipse2, Ellipse3, Ellipse4, Ellipse5].map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt="Student"
-              className="h-7 w-7 sm:h-8 sm:w-8 rounded-full"
-            />
-          ))}
+      {/* Stats Section */}
+      < div className="bg-gray-50 mt-50 py-10" >
+        <div className="max-w-screen-xl mx-auto grid grid-cols-2 sm:grid-cols-4 text-center gap-6 px-4 sm:px-6">
+          <div className="flex flex-col items-center pr-4">
+            <div className="flex flex-col items-center pr-4 border-r-4 border-gray-300">
+              <p className="text-xl sm:text-2xl font-bold text-gray-900">{250}+</p>
+              <p className="text-gray-600 text-sm">Courses by our best mentors</p>
+            </div>
+          </div>
+          <div className="flex flex-col items-center pr-4 border-r-4 border-gray-300">
+            <p className="text-xl sm:text-2xl font-bold text-gray-900">{1000}+</p>
+            <p className="text-gray-600 text-sm">Courses by our best mentors</p>
+          </div>
+          <div className="flex flex-col items-center pr-4 border-r-4 border-gray-300">
+            <p className="text-xl sm:text-2xl font-bold text-gray-900">{15}+</p>
+            <p className="text-gray-600 text-sm">Courses by our best mentors</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <p className="text-xl sm:text-2xl font-bold text-gray-900">{2400}+</p>
+            <p className="text-gray-600 text-sm">Courses by our best mentors</p>
+          </div>
         </div>
-        {/* centered text below */}
-        <p className="text-xs sm:text-sm text-gray-700 text-center leading-tight font-bold">
-          Join our community of <br className="hidden sm:block" /> 1200+ Students
-        </p>
-      </div>
-    </div>
-  </div>
-
-</div> {/* ← close hero row */}
-
-{/* Stats Section */}
-<div className="bg-gray-50 mt-16 py-10">
-  <div className="max-w-screen-xl mx-auto grid grid-cols-2 sm:grid-cols-4 text-center gap-6 px-4 sm:px-6">
-    <div className="flex flex-col items-center pr-4">
-      <div className="flex flex-col items-center pr-4 border-r-4 border-gray-300">
-        <p className="text-xl sm:text-2xl font-bold text-gray-900">{250}+</p>
-        <p className="text-gray-600 text-sm">Courses by our best mentors</p>
-      </div>
-    </div>
-    <div className="flex flex-col items-center pr-4 border-r-4 border-gray-300">
-      <p className="text-xl sm:text-2xl font-bold text-gray-900">{1000}+</p>
-      <p className="text-gray-600 text-sm">Courses by our best mentors</p>
-    </div>
-    <div className="flex flex-col items-center pr-4 border-r-4 border-gray-300">
-      <p className="text-xl sm:text-2xl font-bold text-gray-900">{15}+</p>
-      <p className="text-gray-600 text-sm">Courses by our best mentors</p>
-    </div>
-    <div className="flex flex-col items-center">
-      <p className="text-xl sm:text-2xl font-bold text-gray-900">{2400}+</p>
-      <p className="text-gray-600 text-sm">Courses by our best mentors</p>
-    </div>
-  </div>
-</div>
+      </div >
 
 
       {/* Top Categories Section */}
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-10">
+      < div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-10" >
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">Top Categories</h2>
           <a href="#" className="text-blue-600 hover:underline text-sm sm:text-base">
@@ -236,10 +215,10 @@ const Hero = () => {
           <Category icon={<LuBriefcase />} name="Marketing" courses="12 Courses" />
           <Category icon={<LuAtom />} name="Physics" courses="14 Courses" />
         </div>
-      </div>
+      </div >
 
       {/* Top Courses Section */}
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-12 mb-16">
+      < div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-12 mb-16" >
         <div className="flex items-center justify-between mb-6 mt-10">
           <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">Top Courses</h2>
           <a href="#" className="text-blue-600 hover:underline text-sm sm:text-base">
@@ -271,10 +250,10 @@ const Hero = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div >
 
       {/* Top Instructors Section */}
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-12">
+      < div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-12" >
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">Top Instructors</h2>
           <a href="#" className="text-blue-600 hover:underline text-sm sm:text-base">
@@ -303,10 +282,10 @@ const Hero = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div >
 
       {/* Testimonials Section */}
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-16 bg-gray-50 w-[1440px] h-[512px] gap-16">
+      < div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-16 bg-gray-50 w-[1440px] h-[512px] gap-16" >
         <div className="flex items-center justify-between mb-6 flex-wrap gap-2">
           <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">
             What Our Customer Say <br className="hidden sm:block" /> About Us
@@ -356,21 +335,21 @@ const Hero = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div >
 
       {/* Section1: Become an Instructor */}
-      <div className="max-w-[1123px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 gap-[60px] mt-16">
+      < div className="max-w-[1123px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 gap-[60px] mt-16" >
         {/* Image Content */}
-        <div className="flex-1 flex justify-center items-center mt-10 md:mt-0">
+        < div className="flex-1 flex justify-center items-center mt-10 md:mt-0" >
           <img
             src={image10}
             alt="Transform"
             className="w-[400px] h-[425px] object-cover"
           />
-        </div>
+        </div >
 
         {/* Text Content */}
-        <div className="flex-1 text-center md:text-left">
+        < div className="flex-1 text-center md:text-left" >
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
             Become an Instructor
           </h2>
@@ -381,13 +360,13 @@ const Hero = () => {
             Start Your Instructor Journey
             <HiArrowNarrowRight className="text-white flex" />
           </button>
-        </div>
-      </div>
+        </div >
+      </div >
 
       {/* Section2: Transform your life through education */}
-      <div className="max-w-[1123px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 gap-[60px] mt-16 py-12 rounded-lg">
+      < div className="max-w-[1123px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 gap-[60px] mt-16 py-12 rounded-lg" >
         {/* Text Content */}
-        <div className="flex-1 text-center md:text-left px-6">
+        < div className="flex-1 text-center md:text-left px-6" >
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
             Transform Your Life Through Education
           </h2>
@@ -398,14 +377,14 @@ const Hero = () => {
             Checkout Courses
             <HiArrowNarrowRight className="text-white flex" />
           </button>
-        </div>
+        </div >
 
         {/* Image Content */}
-        <div className="flex-1 flex justify-center items-center mt-10 md:mt-0">
+        < div className="flex-1 flex justify-center items-center mt-10 md:mt-0" >
           <img src={GP143} alt="Transform" className="max-w-xs sm:max-w-md" />
-        </div>
-      </div>
-    </div>
+        </div >
+      </div >
+    </div >
   );
 };
 
