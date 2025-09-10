@@ -17,30 +17,30 @@ const SignUp = () => {
                     <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">Create Your Account</h2>
                     <form>
                         <div className="mb-4">
-  <label className="block text-sm font-semibold text-gray-900" htmlFor="firstName">
-    Full Name
-  </label>
+                            <label className="block text-sm font-semibold text-gray-900" htmlFor="firstName">
+                                Full Name
+                            </label>
 
-  {/* Add a wrapper with gap */}
-  <div className="mt-1 grid grid-cols-1 gap-3 sm:grid-cols-2">
-    <input
-      type="text"
-      id="firstName"
-      name="firstName"
-      autoComplete="given-name"
-      className="w-full p-2 border border-gray-300 rounded-md shadow-sm"
-      placeholder="First Name"
-    />
-    <input
-      type="text"
-      id="lastName"
-      name="lastName"
-      autoComplete="family-name"
-      className="w-full p-2 border border-gray-300 rounded-md shadow-sm"
-      placeholder="Last Name"
-    />
-  </div>
-</div>
+                            {/* Add a wrapper with gap */}
+                            <div className="mt-1 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    name="firstName"
+                                    autoComplete="given-name"
+                                    className="w-full p-2 border border-gray-300 rounded-md shadow-sm"
+                                    placeholder="First Name"
+                                />
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    autoComplete="family-name"
+                                    className="w-full p-2 border border-gray-300 rounded-md shadow-sm"
+                                    placeholder="Last Name"
+                                />
+                            </div>
+                        </div>
 
 
                         <div className="mb-4">
